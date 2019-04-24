@@ -1,0 +1,22 @@
+@import 'partials/reset';
+@import 'variables';
+@import 'mixins';
+@import 'partials/base';
+@import 'partials/nav';
+@import 'partials/header';
+@import 'partials/gallery';
+@import 'partials/price';
+@import 'partials/form';
+@import 'partials/footer';
+
+%logo {
+    width: $max-width;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+%paddings {
+    padding: 0 5vw;
+}

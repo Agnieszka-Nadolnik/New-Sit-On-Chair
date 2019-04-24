@@ -1,0 +1,72 @@
+.menu {
+    @extend %logo;
+    @extend %paddings;
+    background-color: black;
+    color: $base-text-color;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    .logo {
+        font-size: $logo-size;
+
+        font-weight: $normal-font;
+
+        span {
+            color: $base-color;
+            font-weight: bold;
+        }
+    }
+
+    .menufirst ul li {
+        position: relative;
+        display: inline-block;
+        width: 130px;
+        text-align: center;
+        list-style: none;
+        font-size: $text-size;
+        padding: 5vh 20px;
+        cursor: pointer;
+
+
+        &:hover .lists {
+            display: block;
+        }
+
+        .lists {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 85px;
+            width: 130px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                margin-left: -20px;
+                top: -8px;
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-bottom: 20px solid black;
+            }
+
+            li {
+                display: flex;
+                flex-direction: column;
+                background-color: black;
+                padding: 0 20px;
+
+                a {
+                    display: block;
+                    padding: 5px 0;
+                    text-align: center;
+                    color: $base-text-color;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
