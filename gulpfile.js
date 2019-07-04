@@ -3,6 +3,9 @@ var jshint = require("gulp-jshint");
 var sass = require("gulp-sass");
 var sourcemaps = require('gulp-sourcemaps');
 var prefixer = require('gulp-autoprefixer');
+var gulp        = require('gulp');
+var deploy      = require('gulp-gh-pages');
+
 
 
 gulp.task('jshint', function () {
@@ -29,4 +32,13 @@ gulp.task("sass", function () {
 gulp.task("default", function () {
     gulp.watch("./scss/**/*.scss", gulp.series("sass"));
     gulp.watch("./js/**/*.js", gulp.series("jshint"));
+});
+
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
 });
